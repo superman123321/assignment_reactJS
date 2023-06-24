@@ -1,0 +1,12 @@
+.btn-random{
+  margin-top: 4px;
+  padding: 2px 4px;
+  background-color: rgb(38, 38, 145);
+  color: #fff;
+  border-radius: 4px;
+
+  &:hover{
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}

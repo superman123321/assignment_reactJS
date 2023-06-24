@@ -1,0 +1,20 @@
+.box-link{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  
+  padding: 4px 6px;
+  background-color: rgb(45, 45, 188);
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  font-size: large;
+  &:hover{
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+}

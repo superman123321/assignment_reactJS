@@ -1,14 +1,22 @@
 import { useSelector } from "react-redux";
 import Banner from "../../../../components/banner/Banner";
+import classNames from "classnames/bind";
+import styles from './MainPage.module.scss'
+import { Link } from "react-router-dom";
 
+
+const cx = classNames.bind(styles)
 
 function MainPage(){
-  const photos = useSelector((state) => state.photoReducer.photos);
-  const isLoading = useSelector((state) => state.photoReducer.isLoading);
+ 
 
-  console.log('222')
+ 
   return (
-    <Banner title="choose your photo" />
+    <div>
+      <Banner title="Your photo libary" />
+  
+      <div className={cx('box-link')}><Link className={cx('btn')} to="/photo/add" >Add new photos</Link></div>
+    </div>
   )
 }
 

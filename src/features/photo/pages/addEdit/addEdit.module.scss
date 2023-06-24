@@ -1,0 +1,31 @@
+
+
+.photo-edit__nav{
+  display: flex;
+  align-items: center;
+  &-1{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    color: orange;
+
+    :hover{
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+  &-2{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    color: red;
+    :hover{
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
