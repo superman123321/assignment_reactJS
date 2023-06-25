@@ -1,0 +1,25 @@
+.photo-form{
+  padding: 20px 25%;
+ 
+}
+
+.select-field {
+  margin-top: 8px;
+}
+.random-field{
+  margin-top: 8px;
+}
+
+.btn {
+  color: #fff;
+  padding: 4px 8px;
+  background-color: rgb(50, 167, 167);
+  border: none;
+  font-size: 1.6rem;
+
+   &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+   }
+  
+}

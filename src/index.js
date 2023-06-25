@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './assets/styles/GlobalStyles';
-
+import { Provider } from 'react-redux';
+import store from './app/store';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,9 +13,11 @@ root.render(
   <React.StrictMode>
 
     
-        <GlobalStyles>
-          <App />
-          </GlobalStyles>
+      <Provider store={store}>
+          <GlobalStyles>
+            <App />
+            </GlobalStyles>
+      </Provider>
 
       
       

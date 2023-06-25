@@ -9,7 +9,7 @@ function SelectField(props){
   const selectedOption = options.find((option) => option.value === value);
   const { errors, touched } = form;
   const showErr = errors[name] && touched[name];
-  console.log('222', props)
+  
   const handleSelectOptionChange = (selectedOption) => {
     const selectedValue = selectedOption
       ? selectedOption.value
