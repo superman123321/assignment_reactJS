@@ -1,0 +1,11 @@
+.photo-List{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photo-item:first-child {
+  margin-left: 20px;
+}
+.photo-item + .photo-item {
+ margin-left: 20px;
+}

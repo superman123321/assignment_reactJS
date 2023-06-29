@@ -22,3 +22,89 @@
   }
 
 }
+
+.account{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-wrapper {
+    min-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  &-login{
+    width: 120px;
+   
+    padding: 4px 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(44, 115, 223);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover{
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+
+  &-sign{
+    width: 120px;
+
+    padding: 4px 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(32, 221, 117);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover{
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+
+
+  &-login-header {
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  &-login-title {
+    margin-right: 12px;
+  }
+
+  &-login-btn{
+      position: relative;
+      border: none;
+      border-radius: 12px;
+      padding: 4px 16px;
+      color: #fff;
+      background-color: rgb(219, 42, 42);
+      &::before{
+      position: absolute;
+      content: "";
+      top: 0;
+      left: -6px;
+      width: 2px;
+      height: 100%;
+      background-color: black;
+      transform: translateX(-50%);
+      
+    }
+
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+

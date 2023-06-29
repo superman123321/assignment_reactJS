@@ -4,7 +4,7 @@ import { photoApiUrl } from "~/config/apiConfig";
 
 export const getListPhoto = createAsyncThunk(
   "getListPhoto",
-  async (data, { getState, dispatch }) => {
+  async () => {
     try {
       const res = await axios.get(photoApiUrl);
       return res.data;
@@ -20,6 +20,7 @@ export const postPhoto = createAsyncThunk(
     try {
       const res = await axios.post(photoApiUrl, data);
       if (res.status === 201) {
+
         dispatch(getListPhoto);
       }
     } catch (err) {

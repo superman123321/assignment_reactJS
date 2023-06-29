@@ -27,5 +27,6 @@ const photoSlice = createSlice({
   },
 });
 const { actions, reducer } = photoSlice;
+console.log(actions)
 export const {} = actions;
 export default reducer;

@@ -1,0 +1,99 @@
+$white: #ccc;
+
+.photo{
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: auto;
+  & > img {
+    // width: 100%;
+    width: 300px;
+    height: 250px;
+    vertical-align: middle;
+    transition: all 0.45s ease 0s;
+  }
+  &__overlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.25s ease 0s;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover > img {
+    transform: scale(1.35);
+  }
+
+  &:hover &__overlay,
+  &:hover &__actions {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+
+  }
+
+  .photo_actions{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .btn-edit {
+    padding: 2px 4px;
+  
+    border: none;
+    background-color: transparent;
+    border-color: $white;
+    width: 80px;
+    &:hover{
+      
+      background-color: $white;
+      border-radius: 4px;
+      cursor: pointer;
+
+
+    }
+  }
+  .btn-del {
+    padding: 2px 4px;
+    
+    border: none;
+    background-color: transparent;
+    border-color: red;
+    width: 80px;
+    &:hover{
+      background-color: red;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+
+  .white {
+    color:$white;
+    
+    &:hover{
+      color: black;
+     
+    }
+
+  }
+
+  .red {
+    
+    color: red;
+    &:hover{
+      color: $white;
+    }
+  }

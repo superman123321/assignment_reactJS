@@ -50,12 +50,12 @@ function AddEdit(){
     <div className={cx('photo-edit')} >
       <Banner title="😎 Pick your amazing photo 😎" />
       <div className={cx('photo-edit__nav')} >
-        <div className={cx('photo-edit__nav-1')}>
-          <Cart />
-        </div>
+        <Link className={cx('photo-edit__nav-1')} to={ photoId ? `/photo/cart/${photoId}` : "/photo/cart"}>
+          <Cart  />
+        </Link>
 
         <Link className={cx('photo-edit__nav-2')} to={"/photo"}>
-          <Back />
+          <Back title='Go back to previous page'/>
         </Link>
       </div>
       <div className={cx('photo-edit__form')}>

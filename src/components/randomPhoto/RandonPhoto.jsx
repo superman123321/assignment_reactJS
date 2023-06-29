@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
 import styles from './RandomPhoto.module.scss'
+import { Button } from "reactstrap";
 
 
 
@@ -25,14 +26,14 @@ function RandomPhoto(props) {
   
   return (
     <div className={cx('random-photo')}>
-      <button 
+      <Button 
       
       className={cx('btn-random')} 
       onClick={handleRandomPhotoClick}
      
       
       
-      >Click to random a photo</button>
+      >Click to random a photo</Button>
 
       <div className={cx('pic')} >
       <div>{imageUrl && <img src={imageUrl} alt={name} onError={handleRandomPhotoClick}/>}</div>
