@@ -1,3 +1,5 @@
+
+import React,{ Suspense, memo, useEffect, useLayoutEffect, useState, } from "react";
 import classNames from "classnames/bind";
 import styles from "./CartPage.module.scss";
 import Back from "~/features/back/Back";
@@ -7,32 +9,56 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 
-import { Suspense, useEffect, useLayoutEffect, useState } from "react";
 import Loading from "~/components/loading/Loading";
-import { postPhoto } from "../../photoThunk";
+import { getListPhoto, postPhoto } from "../../photoThunk";
+import { Button } from "reactstrap";
 
 const cx = classNames.bind(styles);
 
 function CartPage() {
-  // set stat hiển thị
+  
   const [photoList, setPhotoList] = useState(Image);
+  let newImage = [...photoList];
+
+  const photos = useSelector((state) => {
+  
+    return state.photoReducer.photos;
+  });
+
+  
+  useEffect(()=>{
+    if (photos.length === 0) {
+      dispatch(getListPhoto());
+    }
+    checkArrPhoto();
+  }, [newImage])
+
+  const checkArrPhoto = () =>{
+    console.log('photos',photos);
+  photoList.forEach(element1 => {
+    photos.forEach(element2 => {
+     const isEle =  element1.id === element2.id
+      if(isEle){
+         photoList.filter(element => element.id !== element2.id)
+  console.log('photoList', photoList);
+
+         setPhotoList(photoList)
+      }
+    });
+  });
+  }
 
   
 
   const { photoId } = useParams();
   const dispatch = useDispatch();
   const handleBuy = (id) => {
-    let newImage = [...photoList];
     const indexImg = newImage.findIndex((img) => img.id === id);
-    
     if (indexImg !== -1){
       dispatch(postPhoto(newImage[indexImg]))
       newImage.splice(indexImg, 1);
-    console.log(newImage);
-
+    
     setPhotoList(newImage);}
-    
-    
   };
 
   return (
@@ -62,12 +88,12 @@ function CartPage() {
                       alt="hinhanh"
                       className={cx("photo-list__img")}
                     />
-                    <div
+                    <Button
                       className={cx("photo-list__btn")}
                       onClick={() => handleBuy(photo.id)}
                     >
                       Buy this image
-                    </div>
+                    </Button>
                   </div>
                 );
               })}
@@ -79,4 +105,4 @@ function CartPage() {
   );
 }
 
-export default CartPage;
+export default React.memo(CartPage);

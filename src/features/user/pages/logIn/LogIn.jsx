@@ -19,14 +19,15 @@ function LogIn({
   const acc = JSON.parse(localStorage.getItem('acc'))
   const naviagte = useNavigate()
   const handleLogin = ()=>{
-   
 
-    if (userVal1.current.value === acc.username && userPass1.current.value === acc.password){
+   
+ 
+    if ( userVal1.current.value.length > 0 && userVal1.current.value === acc.username && userPass1.current.value === acc.password){
       SetAccName(userVal1.current.value)
       SetIsLogin(true)
       naviagte('/photo')
     }else{
-      window.alert('aaaa')
+      window.alert('Please enter your username and password')
     }
    
   }

@@ -55,7 +55,7 @@ function MainPage({ isLogin, accName }) {
       <div>
         {isLoading ? (
           <Loading />
-        ) : photos.length > 0 ? (
+        ) : photos.length > 0 && isLogin ? (
           <PhotoList
             photoList={photos}
             onPhotoEditClick={handleEdit}

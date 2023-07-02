@@ -27,7 +27,7 @@ function AddEdit(){
     if (photos.length === 0) {
       dispatch(getListPhoto());
     }
-  }, [dispatch, photos.length]);
+  }, []);
   const initialValues = isAddMode
     ? {
         title: "",
